@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 启动激光雷达跟踪器节点 -->
+  <node name="laser_tracker" pkg="limo_follower" type="laser_tracker.py" output="screen">
+    <param name="winSize" value="5" />
+    <param name="deltaDist" value="0.2" />
+    <param name="maxTrackingDistance" value="5.0" />
+  </node>
+
+  <!-- 启动激光雷达跟随器节点 -->
+  <node name="laser_follower" pkg="limo_follower" type="laser_follower.py" output="screen">
+    <param name="maxSpeed" value="0.9" />
+    <param name="maxSpeed" value="0.5" />
+    <param name="targetDist" value="0.8" />
+    <param name="maxTrackingDistance" value="5.0" />
+    <param name="publish_rate" value="20" />
+  </node>
+</launch>
